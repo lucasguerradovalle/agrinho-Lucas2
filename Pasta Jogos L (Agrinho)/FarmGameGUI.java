@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,11 +25,11 @@ public class FarmGameGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        plantImages = new ImageIcon[] {
-            new ImageIcon("Harvest & Haul/milho 1.png"),
-            new ImageIcon("Harvest & Haul/milho 2.png"),
-            new ImageIcon("Harvest & Haul/milho 3.png"),
-            new ImageIcon("Harvest & Haul/milho 4.png")
+        plantImages = new ImageIcon[]{
+                new ImageIcon("Harvest & Haul/milho 1.png"),
+                new ImageIcon("Harvest & Haul/milho 2.png"),
+                new ImageIcon("Harvest & Haul/milho 3.png"),
+                new ImageIcon("Harvest & Haul/milho 4.png")
         };
 
         farmLabel = new JLabel();
@@ -70,10 +69,10 @@ public class FarmGameGUI extends JFrame {
         harvestButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (plantStage == plantImages.length) {
-                    player.addMoney(100);
+                    player.addMoney(100); // Adiciona 100 de dinheiro ao jogador
                     moneyLabel.setText("Dinheiro: $" + player.getMoney());
                     plantStage = 0;
-                    farmLabel.setIcon(null);
+                    farmLabel.setIcon(null); // Limpa a imagem da fazenda
                 }
             }
         });
@@ -93,6 +92,10 @@ public class FarmGameGUI extends JFrame {
 
     public Market getMarket() {
         return market;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
     }
 
     public void updateStatus() {
