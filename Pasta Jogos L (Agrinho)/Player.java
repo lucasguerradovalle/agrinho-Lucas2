@@ -1,14 +1,8 @@
 public class Player {
-    private String name;
     private int money;
 
-    public Player() {
-        this.name = "Player";
-        this.money = 0;
-    }
-
-    public String getName() {
-        return name;
+    public Player(int initialMoney) {
+        this.money = initialMoney;
     }
 
     public int getMoney() {
@@ -17,9 +11,5 @@ public class Player {
 
     public void addMoney(int amount) {
         money += amount;
-    }
-
-    public void subtractMoney(int amount) {
-        money -= amount;
     }
 }
