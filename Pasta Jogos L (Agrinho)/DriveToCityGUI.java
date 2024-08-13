@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 public class DriveToCityGUI extends JFrame {
 
-    public DriveToCityGUI(FarmGameGUI farmGameGUI) { 
+    public DriveToCityGUI(FarmGameGUI farmGameGUI) {
         setTitle("Driving to City");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -16,8 +16,7 @@ public class DriveToCityGUI extends JFrame {
 
         Timer timer = new Timer(4000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Certifique-se que o construtor abaixo exista em CityGUI.java
-                new CityGUI(farmGameGUI.getMarket(), farmGameGUI); 
+                new CityGUI(farmGameGUI.getMarket(), farmGameGUI); // Usa o market do farmGameGUI
                 dispose(); // Fecha a tela de carregamento
             }
         });
@@ -27,3 +26,4 @@ public class DriveToCityGUI extends JFrame {
         setVisible(true);
     }
 }
+
