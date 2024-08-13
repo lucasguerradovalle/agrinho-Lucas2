@@ -1,17 +1,22 @@
-public class Item {
-    private String name;
-    private int value;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Item(String name, int value) {
-        this.name = name;
-        this.value = value;
+public class Inventory {
+    private List<Item> items;
+
+    public Inventory() {
+        items = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-    public int getValue() {
-        return value;
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 }
