@@ -1,17 +1,13 @@
 public class Market {
-    private Inventory inventory;
 
-    public Market(Inventory inventory) {
-        this.inventory = inventory;
-    }
+    public void sellProducts(Inventory inventory) {
+        int totalEarnings = 0;
 
-    public void sellProducts() {
-        int totalValue = 0;
         for (Item item : inventory.getItems()) {
-            totalValue += item.getValue();
+            totalEarnings += item.getQuantity() * item.getPrice();
+            item.setQuantity(0); // Vende todos os itens, esvaziando o estoque
         }
 
-        inventory.getPlayer().addMoney(totalValue);
-        inventory.clear();
+        System.out.println("Você vendeu todos os produtos por $" + totalEarnings);
     }
 }
