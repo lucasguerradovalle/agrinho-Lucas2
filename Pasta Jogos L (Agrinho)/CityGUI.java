@@ -10,16 +10,12 @@ public class CityGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
-        JLabel cityLabel = new JLabel(new ImageIcon("Harvest & Haul/city.png"));
-        cityLabel.setBounds(0, 0, 800, 600);
-        add(cityLabel);
-
         JButton sellButton = new JButton("Sell Products");
-        sellButton.setBounds(100, 500, 150, 30);
+        sellButton.setBounds(350, 250, 150, 50);
         sellButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                market.sellProducts(); // Método para vender os produtos
-                farmGameGUI.updateStatus(); // Atualiza o status de dinheiro na fazenda
+                market.sellProducts(farmGameGUI.getInventory());
+                farmGameGUI.updateStatus();
                 dispose(); // Fecha a tela da cidade
             }
         });
